@@ -1,0 +1,26 @@
+{
+    "port": "80",
+    "logpath": "yxorp.log",
+    "tls_version": "0.0",
+    "crt_path": "",
+    "key_path": "",
+    "req_limit": 1000,
+    "req_burst": 500,
+    "read_timeout": 30,
+    "write_timeout": 30,
+    "idle_timeout": 60,
+    "targets": [
+        {
+            "name": "ui",
+            "prefix": "/",
+            "target": "http://localhost:8080",
+            "rewrite": false
+        },
+        {
+            "name": "s3 api",
+            "prefix": "/s3/",
+            "target": "http://zeroserver:3000",
+            "rewrite": true
+        }
+    ]
+}
